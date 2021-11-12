@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Back End Assessment</title>
+    <link href="styles.css" rel="stylesheet">
+  </head>
+  <body class="container">
+  </section>
+    <h1>Get a Compliment or Fortune!</h1>
+    <button id="complimentButton">Get a compliment</button>
+    <button id="fortuneButton">Click for fortune!</button>
+    <h1>Enter your name</h1>
+    <form id="contact-form">
+      <input type="text" id="fname" name="fname" placeholder="first name">
+      <input type="text" id="lname" name="lname" placeholder="Last name">
+      <br><input type="submit" value="Submit">
+    </form>
+    <h2>Ask us a question about your goals?</h2>
+    <input type="text"><br><button id="submit2">Answer</button></Form>
+    <h2>Click here for inspirational quotes!</h2>
+    <button id="submit3">Click me!</button></Form>
+
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      document.getElementById("complimentButton").onclick = function () {
+        axios.get("http://localhost:4000/api/compliment/")
+            .then(function (response) {
+              const data = response.data;
+              alert(data);
+            });
+      };
+      document.getElementById("fortuneButton").onclick = function () {
+        axios.get("http://localhost:4000/api/fortune")
+        .then(function (response) {
+              const data = response.data;
+              alert(data);
+            });
+      };
+      document.getElementById("submit").onclick = function () {
+        axios.get("http://localhost:4000/api/submit")
+        .post(function (response) {
+              const data = response.data;
+              alert(data);
+            });
+      };
+    
+      document.getElementById("submit2").onclick = function () {
+        axios.get("http://localhost:4000/api/submit2")
+            .then(function (response) {
+              const data = response.data;
+              alert(data);
+            });
+          
+      };
+    
+    
+      document.getElementById("submit3").onclick = function () {
+        axios.get("http://localhost:4000/api/submit3")
+            .then(function (response) {
+              const data = response.data;
+              alert(data);
+            });
+      };
+     
+    
+    </script>
+    
+  </body>
+</html>
